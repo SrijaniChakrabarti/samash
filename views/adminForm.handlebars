@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<form action="/create_blog" method="post" enctype="multipart/form-data">
+    <div> 
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image">
+    </div>
+        <button type="submit">Add Blog</button>
+</form>
+<form method="POST" action="/upload-for-gallery" enctype="multipart/form-data">
+    <div>
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image">
+    </div>
+    
+        <button type="submit" name="upload-for-gallery">upload-for-gallery</button>
+    
+</form>
+
+</html>
