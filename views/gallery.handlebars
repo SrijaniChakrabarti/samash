@@ -1,11 +1,26 @@
 
-<div class="container">
 
-    <div class="row">
-        {{#each gallery}}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src={{imageUrl}} alt="Card image cap">
-          </div>
-        {{/each}}
-      </div>
+
+ 
+<div class="header">
+  <h1 style="text-align: center;">Gallery Grid</h1>
+</div>
+<div class ="container">
+  <hr class="mt-2 mb-5">
+  <div class="row text-center text-lg-left">
+  {{#each gallery}}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100" target="_blank">
+           <img class="img-fluid img-thumbnail" src={{imageUrl}} alt="Lights" >
+           <div class="caption"><p>{{title}} --- {{date}}</p></div></a>
+        </div>
+      {{/each}}
+     </div>
   </div>
+  </div>
+
+</body>
+
+
+
+  
