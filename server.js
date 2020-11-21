@@ -77,6 +77,9 @@ app.use(bodyParser.json()).use(bodyParser.urlencoded({ extended: true }))
 app.use('/AdminLogin', AdminLogin)
 app.use('/contact', contact)
 
+app.get('/', function (req, res) {
+  res.render('blogs', {})
+})
 
 
 
@@ -170,8 +173,8 @@ app.post('/upload-any-file',anyfileupload.single('file'), async(req,res)=>{
 )
 
 //const port = ||3000
-app.listen(process.env.PORT || 5000, () => {
-     console.log(`Server is running at ${port}`)
+app.listen((process.env.PORT || 5000), () => {
+     console.log(`Server is running at ${process.env.PORT}`)
      })
 /*server.connection({
     port: process.env.PORT || 5000 
