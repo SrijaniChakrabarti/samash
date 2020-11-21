@@ -13,7 +13,7 @@ const multer = require('multer')
 const http = require('http')
 
 
-const {google} = require('googleapis')
+/*const {google} = require('googleapis')
 const oAuth2data = require('./credentials.json')
 const client_id = oAuth2data.web.client_id
 const client_secret = oAuth2data.web.client_secret
@@ -26,7 +26,7 @@ const oAuth2Client = new google.auth.OAuth2({
 
 var authed = false
 
-const scope = " https://www.googleapis.com/auth/drive.file  https://www.googleapis.com/auth/userinfo.profile "
+const scope = " https://www.googleapis.com/auth/drive.file  https://www.googleapis.com/auth/userinfo.profile "*/
 
 const authemail = "samashrayatrust@gmail.com"
 const authpass ="Tatai@167"
