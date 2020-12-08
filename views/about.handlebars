@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to Samashraya</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="views/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="views/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="views/css/style.min.css" rel="stylesheet">
+</head>
+<body>
+ <main class="mt-5 pt-5">
+ 
+
+<div class="container" style="background-color: purple">
+  <div class="jumbotron" style="background-color: purple" >
+    <h1 class="text-center text-white display-4 font-weight-bold" >About US</h1><br><br>     
+    <p class="text-center text-white"><strong>Know Who We Are</strong></p>
+	<p class="text-center text-white"><strong>Know What We Do</strong></p>
+  </div>
+</div>
+{{#each about}}
+<div class="container" style="background-color: purple">
+  <div class="jumbotron" >
+    <img class="img-fluid" src="{{imageUrl}}" alt="beautiful">
+  </div>
+</div>
+
+<div class="container" style="background-color: purple">
+  <h2 class= "text-center text-white display-4 font-weight-bold">{{title}}</h2><br>
+  
+  <div class="card">
+    <div class="card-header" style="background-color: transparent;"><p class="text-center text-info font-weight-bold" style="font-size: 23"><strong>{{description}}</strong></p></div>
+    <div class="card-body" style="background-color: transparent font-size: 18;">{{content}}</div> 
+    <div class="card-footer" style="background-color: purple;"><p class="text-center text-white font-italic">{{date}}</p></div>
+  </div>
+</div>
+{{/each}}
+
+</body>
+</html>

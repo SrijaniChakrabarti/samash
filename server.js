@@ -37,18 +37,15 @@ require('./model/Blog')
 require('./model/Gallery')
 require('./model/adminauth')
 require('./model/Notice')
+require('./model/Post')
 
 
 require('./handlers/cloudinary')
 const upload = require('./handlers/multer')
 const gallerYupload = require('./handlers/multerGallery')
 const noticeupload = require('./handlers/multerNotice')
-const anyfileupload = multer({
-  dest:'uploads',
-  fileFilter(req,file,cb){
-    console.log(file.originalname)
-  }
-})
+const blogpost = require('./handlers/multerPost')
+
 
 
 const AdminLogin = require('./routes/AdminLogin')
@@ -61,6 +58,7 @@ const Blog = mongoose.model('Blog')
 const Gallery = mongoose.model('Gallery')
 const adminauth = mongoose.model('adminauth')
 const Notice = mongoose.model('Notice')
+const Post  = mongoose.model('Post') 
 
 
 
@@ -108,6 +106,13 @@ app.get('/notice', async (req, res) => {
   const notice = await Notice.find({})
   res.render('notice', {
     notice
+  })
+})
+
+app.get('/about', async (req, res) => {
+  const about = await Post.find({})
+  res.render('about', {
+    about
   })
 })
 
@@ -164,18 +169,21 @@ app.post('/login', async( req, res) => {
 
 })
 
-app.post('/upload-any-file',anyfileupload.single('file'), async(req,res)=>{
+app.post('/addpost', blogpost.single('image'), async (req, res) => {
+  const result = await cloudinary.v2.uploader.upload(req.file.path)
+  const post = new Post()
+  post.title = req.body.title
+  post.date = req.body.date
+  post.description = req.body.description
+  post.content = req.body.content
+  post.imageUrl = result.secure_url
+  post.image_id = result.public_id
+  await post.save()
+  res.redirect('/about')
+})
 
-   res.send({
-    message:'file uploaded successfully'
-   })
-  }
-)
 
 //const port = ||3000
 app.listen((process.env.PORT || 5000), () => {
      console.log(`Server is running at ${process.env.PORT}`)
      })
-/*server.connection({
-    port: process.env.PORT || 5000 
-})*/

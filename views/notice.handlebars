@@ -1,15 +1,8 @@
 
 
-<head>
+<body class="grey lighten-3">
+  <main class="mt-5 pt-5">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Today's Notice</title>
-
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
@@ -19,25 +12,25 @@
 
   <!-- Custom styles for this template -->
   <link href="/css/coming-soon.min.css" rel="stylesheet">
-  <style>
-  .header {
-  text-align: center;
-  padding: 32px;
-  }
   
-  </style>
-
-</head>
-
-<body>
   
-  <h2 style ="text-align:center">Today's Notice</h2>
+  
   {{#each notice}}
-  <ul>
-  <li><div class="header">{{title}}</div>></li>
-  <li><div class="header">{{date}}</div></h3></li>
-  <li><img class= "responsive-img" src={{imageUrl}} alt="description"></li>
-  </ul>
+
+  <div class="container">
+  <div class="jumbotron" >
+    <img class="img-fluid" src="{{imageUrl}}" alt="beautiful">
+  </div>
+</div>
+
+  <div class="container" style="background-color: purple">
+  <div class="jumbotron" style="background-color: green" >
+  <h2 class= "text-center text-white  font-weight-bold">{{title}}</h2>
+  <p class="text-center text-white font-italic">{{date}}</p>
+</div>
+</div>
+  
+  
   {{/each}}
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -45,6 +38,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/coming-soon.min.js"></script>
+</main>
 
 </body>
 

@@ -1,7 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -72,8 +70,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 1;
 }
 </style>
-</head>
+
 <body>
+
+<main class="mt-5 pt-5"> 
 
 <h2>Upload Your Design</h2>
 <p>Click on each button  to open  each form.</p>
@@ -123,18 +123,27 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <button type="button" class="btn cancel" onclick="closeNoticeDesign()">Close</button>
    </form>
   </div>
-  <button class="open-button" onclick="openFormsDesign()">Upload-Any-Form</button>
+  <button class="open-button" onclick="openFormsDesign()">Create BlogPost</button>
   <div class="form-popup" id="myForm4">
-  <form method="POST" action="/upload-any-file" enctype="multipart/form-data">
+  <form method="POST" action="/addpost" enctype="multipart/form-data">
     <div>
-    	<label for="file">Upload-Forms</label>
-        <input type="file" name="file" placeholder="Registration form" id="file">
+    	  <label for="title">Enter Your Title</label>
+        <input type="text" name="title" id="title">
+        <label for="date">Date</label>
+        <input type="date" name="date" placeholder="15/04/2020" id="date">
+        <label for="description">Describe about Your Subject</label>
+        <input type="text" name="description" id="description" placeholder="Today our activities..">
+        <label for="content">Enter The Story</label>
+        <textarea class="form-control" rows="30" name="content" id="content"></textarea>
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image">
     </div>
     
-        <button type="submit" name="upload-any-file">Upload-Forms</button>
+        <button type="submit" name="addpost">post the story</button>
         <button type="button" class="btn cancel" onclick="closeFormsDesign()">Close</button>
    </form>
   </div>
+</main>
   
   <script>
 function openHomepageDesign() {
